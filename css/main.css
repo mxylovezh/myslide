@@ -245,6 +245,9 @@ button {
   .menu .other-options{
     display: block;
   }
+  .menu .phone{
+    display: none;
+  }
 }
 .menu .help p{
   color: #ffffff;
