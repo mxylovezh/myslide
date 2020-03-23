@@ -109,7 +109,7 @@ button {
   top: 0;
   height: 100vh;
   width: calc(100vw - 200px);
-  background: #445760;
+  background: #A0A3A9;
   transform: translateX(300%);
   transition: transform .3s;
   overflow: auto;
