@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>One Slide</title>
+  <title>My Slide</title>
   <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
   <meta name="author" content="Hakim El Hattab">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/reveal.css">
   <link rel="stylesheet" href="lib/css/monokai.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1706142_uth1lsss799.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1706142_j6mmdhof6d.css">
   <script>
   </script>
 </head>
@@ -26,13 +26,19 @@
 <div class="menu">
   <span class="iconfont icon-close"></span>
   <div class="detail">
-    <div class="tab active"><span class="iconfont icon-edit"></span>编辑标签</div>
+    <div class="tab active"><span class="iconfont icon-edit"></span>文档编辑</div>
     <div class="tab"><span class="iconfont icon-theme"></span>选择主题</div>
+    <div class="tab"><span class="iconfont icon-speaker"></span>演讲者模式</div>
     <div class="tab download"><span class="iconfont icon-download"></span>下载PDF</div>
+    <div class="tab download"><span class="iconfont icon-help"></span>帮助文档</div>
     <div class="content active">
       <div class="content-title"><h1>编辑</h1></div>
       <div class="content-body">
         <textarea></textarea>
+        <div class="uploader">
+          <input type="file" id="img-loader" accept="image/*">
+          <label for="img-loader">点击上传图片(支持.png .jpg .gif... 最大不超过2M)</label>
+        </div>
         <button class="btn-save">保存</button>
       </div>
     </div>
@@ -109,8 +115,48 @@
       </div>
     </div>
     <div class="content ">
+      <div class="content-title"><h1>演讲者模式</h1></div>
+      <div class="content-body">
+        <h4>按 <strong>S</strong> 键开启演讲者模式</h4>
+      </div>
+    </div>
+    <div class="content ">
       <div class="content-title"><h1>下载</h1></div>
       <div class="content-body">
+        <h4>下载为PDF</h4>
+      </div>
+    </div>
+    <div class="content help">
+      <div class="content-title"><h1>帮助文档</h1></div>
+      <div class="content-body">
+        <h4>项目介绍</h4>
+        <p>My Slide 是一款简洁高效的 PPT 在线制作演示工具</p>
+        <h4>文档编辑</h4>
+        <p>如果你会 Markdown 语法，那么这个软件对你来说上手即会，如果你还是个新手,那么也没关系，我来教你一些简单的 Markdown 语法</p>
+        <ul>
+          <li><strong>#</strong> 首页</li>
+          <li><strong>##</strong> 除首页的其他的一级页面</li>
+          <li><strong>###</strong> 二级页面</li>
+          <li><strong>#####</strong> 一级标题</li>
+          <li><strong>######</strong> 二级标题</li>
+          <li>-/+/* 无序列表</li>
+          <li>1. 有序列表</li>
+          <li>**字** 加粗字体</li>
+          <li>*字* 倾斜字体</li>
+          <li>***字*** 加粗倾斜字体</li>
+          <li>[超链接名](超链接地址 "超链接title") 引入超链接</li>
+        </ul>
+        <p>当你看完这些就能运用 Markdown 的基本功能，如果还想学更多的语法，请看 <a target="_blank" href="https://markdown-zh.readthedocs.io/en/latest/">Markdown 中文文档</a></p>
+        <h4>选择主题</h4>
+        <p>可以选择你想要的 PPT 主题,可以设置切换效果和显示位置</p>
+        <h4>演讲者模式</h4>
+        <ul>
+          <li>可以预览下一页 PPT 的内容</li>
+          <li>有时间记录</li>
+          <li>在文档编辑里添加 Note 关键字，这下面的内容都只在演讲者模式可见</li>
+        </ul>
+        <h4>打印PDF</h4>
+        <p>可以把你制作的 PPT 打印成 PDF 保存到本地</p>
       </div>
     </div>
   </div>
@@ -119,7 +165,7 @@
   <div class="slides">
   </div>
 </div>
-
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.2.0/dist/av-min.js"></script>
 <script src="js/reveal.js"></script>
 <script src="js/main.js"></script>
 

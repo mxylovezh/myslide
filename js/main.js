@@ -193,6 +193,61 @@ const Theme = {
 
 }
 
+
+const ImgUploader = {
+  init() {
+    this.$fileInput = $('#img-loader')
+    this.$textarea = $('.menu textarea')
+
+    AV.init({
+      appId: "5cmeGcY2539sCp40h5iCPstr-gzGzoHsz",
+      appKey: "iw11rUurmbQEirqDiMDSviph",
+      serverURLs: "https://5cmegcy2.lc-cn-n1-shared.com"
+    })
+
+    this.bind()
+  },
+
+  bind() {
+    let self = this
+    this.$fileInput.onchange = function () {
+      if (this.files.length > 0) {
+        let localFile = this.files[0]
+        console.log(localFile)
+        if (localFile.size / 1048576 > 2) {
+          alert('文件不能超过2M')
+          return
+        }
+        self.insertText(`![上传中，进度0%]()`)
+        let avFile = new AV.File(encodeURI(localFile.name), localFile)
+        avFile.save({
+          keepFileName: true,
+          onprogress(progress) {
+            self.insertText(`![上传中，进度${progress.percent}%]()`)
+          }
+        }).then(file => {
+          console.log('文件保存完成')
+          console.log(file)
+          let text = `![${file.attributes.name}](${file.attributes.url}?imageView2/0/w/800/h/400)`
+          self.insertText(text)
+        }).catch(err => console.log(err))
+      }
+    }
+  },
+
+  insertText(text = '') {
+    let $textarea = this.$textarea
+    let start = $textarea.selectionStart
+    let end = $textarea.selectionEnd
+    let oldText = $textarea.value
+
+    $textarea.value = `${oldText.substring(0, start)}${text} ${oldText.substring(end)}`
+    $textarea.focus()
+    $textarea.setSelectionRange(start, start + text.length)
+  }
+}
+
+
 const Print = {
   init() {
     this.$download = $('.menu .download')
@@ -228,6 +283,6 @@ const App = {
   }
 }
 
-App.init(Menu, Editor, Theme, Print)
+App.init(Menu, Editor, Theme, Print, ImgUploader)
 
 

@@ -34,7 +34,7 @@ button {
 }
 
 .control .iconfont {
-  color: #ffffff;
+  color: #B82525;
   display: block;
   padding: 16px;
   font-size: 40px;
@@ -47,11 +47,23 @@ button {
   z-index: 100;
   min-width: 200px;
   height: 100vh;
-  background: #252f2d;
-  color: #747c7c;
+  background: #373A41;
+  color: #A0A3A9;
   font-size: 13px;
   transform: translateX(-100%);
   transition: transform .3s;
+}
+
+.menu .uploader{
+  padding: 10px 15px;
+}
+
+.menu .uploader input[type='file']{
+  display: none;
+}
+.menu .uploader label{
+  color: #ffffff;
+  cursor: pointer;
 }
 
 .menu.open {
@@ -62,6 +74,10 @@ button {
   position: absolute;
   right: 10px;
   top: 10px;
+  cursor: pointer;
+}
+.menu .icon-close:hover{
+  color: #ffffff;
 }
 
 .menu .detail {
@@ -76,7 +92,7 @@ button {
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding: 10px 10px;
+  padding: 10px 20px;
   font-size: 15px;
 }
 
@@ -91,7 +107,7 @@ button {
   top: 0;
   height: 100vh;
   width: calc(100vw - 200px);
-  background: #19201E;
+  background: #445760;
   transform: translateX(200%);
   transition: transform .3s;
   overflow: auto;
@@ -104,8 +120,9 @@ button {
 .menu .content .content-title {
   width: 100%;
   font-size: 50px;
+  color: #ffffff;
   padding: 20px 20px;
-  border-bottom: 3px solid grey;
+  border-bottom: 3px solid #ffffff;
 }
 
 .menu .content .content-body {
@@ -114,14 +131,15 @@ button {
 
 .menu .content-body textarea {
   resize: none;
-  padding: 15px;
+  padding: 18px;
   background: #1E2425;
   border: none;
   outline: none;
   width: 100%;
   color: #ffffff;
+  font-family: inherit;
   font-size: 16px;
-  min-height: 300px;
+  min-height: 350px;
 }
 
 .menu .content-body button {
@@ -129,8 +147,9 @@ button {
   opacity: .4;
   color: #ffffff;
   font-size: 20px;
-  margin: 10px;
+  margin: 10px 13px;
   padding: 8px 12px;
+  cursor: pointer;
 }
 
 .menu .content-body button:hover {
@@ -146,6 +165,7 @@ button {
 .menu .content-body h4 {
   padding: 20px 25px 10px 35px;
   font-size: 20px;
+  color: #ffffff;
 }
 
 .menu .theme figure {
@@ -182,13 +202,29 @@ button {
   margin-top: 10px;
   padding: 5px 5px 10px 5px;
   border-radius: 5px;
-  border: 2px solid #747C7C;
+  border: 2px solid #ffffff;
   outline: none;
   background: transparent;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .menu option {
-  background: #19201E;
+  background: #445760;
   color: #ffffff;
+  border: 1px solid #ffffff;
+
+}
+.menu .help p{
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px 35px;
+}
+.menu  ul{
+  color: #ffffff;
+  padding: 0 50px;
+}
+.menu ul li{
+  font-size: 15px;
+  padding: 10px 0;
 }
