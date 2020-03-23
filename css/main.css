@@ -214,19 +214,18 @@ button {
 
 .menu .theme figure figcaption {
   padding-top: 5px;
+  color: #ffffff;
 }
 
 .menu .other-options {
   display: flex;
   align-items: center;
 }
-
 .menu .transition, .align {
   display: flex;
   align-items: center;
   width: 80px;
-  margin-left: 35px;
-  margin-top: 10px;
+  margin: 10px 35px;
   padding: 5px 5px 10px 5px;
   border-radius: 5px;
   border: 2px solid #ffffff;
@@ -237,10 +236,15 @@ button {
 }
 
 .menu option {
-  background: #445760;
+  background: #A0A3A9;
   color: #ffffff;
   border: 1px solid #ffffff;
+}
 
+@media (max-width: 500px) {
+  .menu .other-options{
+    display: block;
+  }
 }
 .menu .help p{
   color: #ffffff;
