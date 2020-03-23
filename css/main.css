@@ -10,6 +10,8 @@ button {
   outline: none;
 }
 
+
+
 .reveal.left-top section {
   text-align: left;
 }
@@ -34,7 +36,7 @@ button {
 }
 
 .control .iconfont {
-  color: #B82525;
+  color: #ffffff;
   display: block;
   padding: 16px;
   font-size: 40px;
@@ -45,12 +47,12 @@ button {
   position: fixed;
   left: 0;
   z-index: 100;
-  min-width: 200px;
+  width: 200px;
   height: 100vh;
   background: #373A41;
   color: #A0A3A9;
   font-size: 13px;
-  transform: translateX(-100%);
+  transform: translateX(-110%);
   transition: transform .3s;
 }
 
@@ -108,11 +110,36 @@ button {
   height: 100vh;
   width: calc(100vw - 200px);
   background: #445760;
-  transform: translateX(200%);
+  transform: translateX(300%);
   transition: transform .3s;
   overflow: auto;
 }
 
+@media (max-width: 500px) {
+  body .menu{
+    width: 135px;
+  }
+  body .menu .content{
+    left: 135px;
+    width: calc(100vw - 135px);
+  }
+  .control .iconfont {
+    color: #ffffff;
+    display: block;
+    padding: 16px;
+    font-size: 20px;
+  }
+  .control {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    min-height: 100px;
+    z-index: 1;
+    opacity: 1;
+    transition: all .8s;
+  }
+}
 .menu.open .content.active {
   transform: translateX(0);
 }
@@ -132,7 +159,7 @@ button {
 .menu .content-body textarea {
   resize: none;
   padding: 18px;
-  background: #1E2425;
+  background: #2B373D;
   border: none;
   outline: none;
   width: 100%;

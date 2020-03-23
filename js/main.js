@@ -116,8 +116,8 @@ const Editor = {
   },
 
   start() {
-    this.$textarea.value = localStorage.markdown || '# One Slide'
-    this.$html.innerHTML = convert(localStorage.markdown || '# One Slide')
+    this.$textarea.value = localStorage.markdown || '# My Slide'
+    this.$html.innerHTML = convert(localStorage.markdown || '# My Slide')
     Reveal.initialize({
       slideNumber: true,
       overview: true,
@@ -149,6 +149,7 @@ const Theme = {
     this.$$figure = $$('.menu .theme figure')
     this.$transitiion = $('.menu .transition')
     this.$align = $('.menu .align-way .align')
+    this.$setting = $('.control .iconfont')
     this.$reval = $('.reveal')
     this.bind()
     this.loadTheme()
@@ -179,7 +180,14 @@ const Theme = {
   },
 
   loadTheme() {
-    let theme = localStorage.theme || 'night'
+    let theme = localStorage.theme || 'moon'
+    const lightTheme = ['beige','serif','simple','sky','solarized','white']
+    const darkTheme = ['black','blood','league','moon','night']
+    if(lightTheme.includes(theme)){
+      this.$setting.style.color = '#000'
+    }else if(darkTheme.includes(theme)){
+     this.$setting.style.color = '#fff'
+    }
     const $link = document.createElement('link')
     $link.rel = 'stylesheet'
     $link.href = `css/theme/${theme}.css`
